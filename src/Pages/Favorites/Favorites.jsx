@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import PhoneCard from "../../Components/Phones/PhoneCard";
-import Phone from "../../Components/Phones/Phone";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -47,12 +46,14 @@ const Favorites = () => {
                     <PhoneCard key={phone.id} phone={phone}></PhoneCard>
                   ))}
           </div>
-          <button
-            onClick={() => setIsShow(!isShow)}
-            className="px-5 py-2 rounded-lg bg-green-200 block mx-auto"
-          >
-            {isShow ? "Show Less" : "Show More"}
-          </button>
+          {favorites.length > 2 && (
+            <button
+              onClick={() => setIsShow(!isShow)}
+              className="px-5 py-2 rounded-lg bg-green-200 block mx-auto"
+            >
+              {isShow ? "Show Less" : "Show More"}
+            </button>
+          )}
         </div>
       )}
     </div>
