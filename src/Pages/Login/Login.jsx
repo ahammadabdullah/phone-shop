@@ -1,7 +1,9 @@
+import { LoginCard } from "../../Components/Login/LoginCard";
+
 const Login = () => {
   return (
-    <div>
-      <h3 className="text-3xl">This is login page</h3>
+    <div className="flex items-center justify-center h-screen">
+      <LoginCard />
     </div>
   );
 };
