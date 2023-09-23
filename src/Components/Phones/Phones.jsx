@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PhoneCard from "./PhoneCard";
 
 const Phones = ({ phones }) => {

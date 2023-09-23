@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardHeader,
@@ -9,7 +10,6 @@ import {
 import { Link } from "react-router-dom";
 
 export default function PhoneCard({ phone }) {
-  console.log(phone);
   const { id, image, phone_name, brand_name, price, rating } = phone || {};
   return (
     <Card className="w-96 mx-auto">

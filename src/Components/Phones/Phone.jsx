@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import swal from "sweetalert";
 
 const Phone = () => {
   const [phone, setPhone] = useState({});
@@ -23,13 +24,15 @@ const Phone = () => {
     if (!favoriteItem) {
       favoriteArray.push(phone);
       localStorage.setItem("favorites", JSON.stringify(favoriteArray));
+      swal("Good job!", "Product Added Successfully!", "success");
     } else {
       const isExist = favoriteItem.find((phone) => phone.id === id);
       if (!isExist) {
         favoriteArray.push(...favoriteItem, phone);
         localStorage.setItem("favorites", JSON.stringify(favoriteArray));
+        swal("Good job!", "Product Added Successfully!", "success");
       } else {
-        alert("already added");
+        swal("Error!", "Already Added!", "error");
       }
     }
   };
