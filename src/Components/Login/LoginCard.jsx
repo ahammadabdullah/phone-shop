@@ -14,7 +14,7 @@ export function LoginCard() {
     <Card className="w-96">
       <CardHeader
         variant="gradient"
-        color="gray"
+        color="green"
         className="mb-4 grid h-28 place-items-center"
       >
         <Typography variant="h3" color="white">
@@ -22,14 +22,14 @@ export function LoginCard() {
         </Typography>
       </CardHeader>
       <CardBody className="flex flex-col gap-4">
-        <Input label="Email" size="lg" />
-        <Input label="Password" size="lg" />
+        <Input label="Email" size="lg" type="Email" />
+        <Input label="Password" size="lg" required type="password" />
         <div className="-ml-2.5">
           <Checkbox label="Remember Me" />
         </div>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button variant="gradient" fullWidth>
+        <Button variant="gradient" color="green" fullWidth>
           Sign In
         </Button>
         <Typography variant="small" className="mt-6 flex justify-center">
