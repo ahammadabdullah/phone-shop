@@ -6,12 +6,13 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 export default function PhoneCard({ phone }) {
   console.log(phone);
-  const { image, phone_name, brand_name, price, rating } = phone;
+  const { id, image, phone_name, brand_name, price, rating } = phone || {};
   return (
-    <Card className="w-96">
+    <Card className="w-96 mx-auto">
       <CardHeader shadow={false} floated={false} className="h-96">
         <img
           src={image}
@@ -20,6 +21,9 @@ export default function PhoneCard({ phone }) {
         />
       </CardHeader>
       <CardBody>
+        <Typography color="blue-gray" className="font-medium">
+          {brand_name}
+        </Typography>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
             {phone_name}
@@ -33,18 +37,19 @@ export default function PhoneCard({ phone }) {
           color="gray"
           className="font-normal opacity-75"
         >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
+          {rating}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >
-          Add to Cart
-        </Button>
+        <Link to={`/phones/${id}`}>
+          <Button
+            ripple={false}
+            fullWidth={true}
+            className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+          >
+            See Details
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

@@ -3,6 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Favorites from "../Pages/Favorites/Favorites";
 import Login from "../Pages/Login/Login";
+import Phone from "../Components/Phones/Phone";
 
 const myCreatedRouter = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const myCreatedRouter = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/phones/:id",
+        element: <Phone />,
+        loader: () => fetch("/phones.json"),
       },
     ],
   },
