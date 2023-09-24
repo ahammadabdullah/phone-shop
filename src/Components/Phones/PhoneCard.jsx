@@ -41,7 +41,7 @@ export default function PhoneCard({ phone }) {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Link to={`/phones/${id}`}>
+        <Link to={`/phones/${id}`} state={phone_name}>
           <Button
             ripple={false}
             fullWidth={true}
